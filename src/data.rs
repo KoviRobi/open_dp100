@@ -1,6 +1,6 @@
 use std::convert::TryFrom;
 
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 pub struct DeviceInfo {
     pub dev_type: [u8; 16],
     pub hdw_ver: u16,
@@ -13,11 +13,11 @@ pub struct DeviceInfo {
     pub day: u8,
 }
 
-#[derive(Debug,Clone,PartialEq)]
+#[derive(Debug, Clone, PartialEq)]
 #[repr(u8)]
-pub enum OutputState{
+pub enum OutputState {
     On = 0x01,
-    Off = 0x00
+    Off = 0x00,
 }
 impl From<u8> for OutputState {
     fn from(value: u8) -> Self {
@@ -29,17 +29,17 @@ impl From<u8> for OutputState {
     }
 }
 
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 pub struct BasicSet {
     pub index: u8,
     pub state: OutputState,
     pub vo_set: u16,
     pub io_set: u16,
     pub ovp_set: u16,
-    pub ocp_set: u16
+    pub ocp_set: u16,
 }
 
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 pub struct BasicInfo {
     // unit mV
     pub vin: u16,
@@ -59,8 +59,7 @@ pub struct BasicInfo {
     pub work_st: u8,
 }
 
-
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 pub struct SystemInfo {
     pub blk_lev: i8,
     pub opp: u16,
@@ -68,9 +67,8 @@ pub struct SystemInfo {
     pub vol_kev: i8,
 }
 
-
 // 0x50 SCAN_OUT
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 pub struct ScanOut {
     pub on_off: u8,
     pub on_time: u16,
@@ -81,10 +79,9 @@ pub struct ScanOut {
     pub step: u16,
 }
 
-
 // 0x55 SERIAL_OUT
 
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 pub struct SerialOut {
     pub on_off: u8,
     pub on_time: u16,
@@ -95,12 +92,12 @@ pub struct SerialOut {
     pub cycle_times: u8,
 }
 
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 #[repr(u8)]
-pub enum OpResult{
-    Failed  = 0x00,
+pub enum OpResult {
+    Failed = 0x00,
     Success = 0x01,
-    Unknown
+    Unknown,
 }
 
 impl From<u8> for OpResult {
@@ -113,7 +110,7 @@ impl From<u8> for OpResult {
     }
 }
 
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 pub struct OperationResult {
     pub result: OpResult,
 }

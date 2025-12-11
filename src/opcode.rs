@@ -1,7 +1,6 @@
 use std::convert::TryFrom;
 
-#[derive(Debug)]
-#[derive(Clone)]
+#[derive(Debug, Clone)]
 #[repr(u8)]
 pub enum OpCode {
     None = 0x00,

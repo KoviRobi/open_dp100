@@ -1,6 +1,5 @@
 use rusb::{Device, Direction, TransferType};
 
-
 pub fn print_device_info(device: &Device<rusb::GlobalContext>) {
     let device_desc = match device.device_descriptor() {
         Ok(desc) => desc,
