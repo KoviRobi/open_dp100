@@ -8,13 +8,30 @@ fn main() {
         return;
     }
     let api = OpenDP100::new(0).unwrap();
-    println!("{:?}", api.sys_info().unwrap());
 
-    println!("{:?}", api.device_info().unwrap());
+    if let Ok(sys_info) = api.sys_info() {
+        println!("{:?}", sys_info);
+    } else {
+        println!("No sys_info!");
+    }
 
-    println!("{:?}", api.basic_info().unwrap());
+    if let Ok(device_info) = api.device_info() {
+        println!("{:?}", device_info);
+    } else {
+        println!("No device_info!");
+    }
 
-    println!("{:?}", api.current_basic_set().unwrap());
+    if let Ok(basic_info) = api.basic_info() {
+        println!("{:?}", basic_info);
+    } else {
+        println!("No basic_info!");
+    }
+
+    if let Ok(current_basic_set) = api.current_basic_set() {
+        println!("{:?}", current_basic_set);
+    } else {
+        println!("No current_basic_set!");
+    }
 
     api.switch_config(6).unwrap();
 

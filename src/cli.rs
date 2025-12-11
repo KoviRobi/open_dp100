@@ -151,7 +151,11 @@ fn main() {
             device.basic_info().unwrap().print();
 
             if status_matches.get_flag("system") {
-                device.sys_info().unwrap().print();
+                if let Ok(sys_info) = device.sys_info() {
+                    sys_info.print();
+                } else {
+                    println!("No sys info!\n");
+                }
             }
 
             let current_config = device.current_basic_set().unwrap();
