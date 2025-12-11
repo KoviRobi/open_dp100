@@ -66,6 +66,8 @@ fn main() {
         .version("1.0")
         .author("lessu")
         .about("dp100 cli program")
+        .subcommand_required(true)
+        .arg_required_else_help(true)
         .subcommand(
             Command::new("ls")
                 .about("print devices that avaliable")
