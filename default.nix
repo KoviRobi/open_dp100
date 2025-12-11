@@ -14,7 +14,7 @@ pkgs.rustPlatform.buildRustPackage {
     "src"
     "src/bin"
     ".*\.rs$"
-    "alientek-dp100\.rules"
+    "99-alientek-dp100\.rules"
   ];
 
   nativeBuildInputs = [
@@ -28,7 +28,7 @@ pkgs.rustPlatform.buildRustPackage {
 
   postInstall = ''
     mkdir -p "$out/etc/udev/rules.d"
-    cp alientek-dp100.rules "$out/etc/udev/rules.d"
+    cp 99-alientek-dp100.rules "$out/etc/udev/rules.d"
   '';
 
   meta = {
