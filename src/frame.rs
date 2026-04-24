@@ -188,7 +188,7 @@ impl Operational<10> for BasicSet {
             state: OutputState::from( data[1] ),
             vo_set: read_u16(&data[2..4], ByteOrder::LittleEndian).unwrap(),
             io_set: read_u16(&data[4..6], ByteOrder::LittleEndian).unwrap(),
-            ovp_set: read_u16(&data[4..8], ByteOrder::LittleEndian).unwrap(),
+            ovp_set: read_u16(&data[6..8], ByteOrder::LittleEndian).unwrap(),
             ocp_set: read_u16(&data[8..10], ByteOrder::LittleEndian).unwrap()
         })
     }
