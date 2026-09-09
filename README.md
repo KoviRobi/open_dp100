@@ -21,12 +21,12 @@ Steps
 2. cd this project dir
 3. cargo build --release
 
-A bin called 'cli' is under `target/release/`
+A bin called 'dp100' is under `target/release/`
 
-This is the cli interface of this project
+This is the dp100 interface of this project
 
 ## CLI usage
-detail see `cli -h`
+detail see `dp100 -h`
 
 3 sub-commands is supported
 1. `ls` : list connected DP100s
@@ -36,29 +36,29 @@ detail see `cli -h`
 ### Examples
 - List current DP100s that connected
 
-    ```cli ls```
+    ```dp100 ls```
 
 - List first DP100 device's status
 
-    ```cli status```
+    ```dp100 status```
 
 - List 2nd DP100 device's status
 
-    ```cli status -d1```
+    ```dp100 status -d1```
 
 - Set first DP100 Output On
 
-    ```cli set on```
+    ```dp100 set on```
 
 - Set DP100 complex 1
 
-    ```cli set -d 1 config=5 v=12.00 ov=30.00 i=1.00 oc=2.00    on```
+    ```dp100 set -d 1 config=5 v=12.00 ov=30.00 i=1.00 oc=2.00    on```
 
     set second device switch to config 5,then edit the output value,at last turn it on
 
 - Set DP100 complex 2
 
-    ```cli set config=5 on```
+    ```dp100 set config=5 on```
 
     Switch to config 5 and turn on
 

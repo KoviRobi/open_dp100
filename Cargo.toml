@@ -8,3 +8,7 @@ hidapi = "2.2.2"
 crc16 = "0.4.0"
 endianness = "0.2.0"
 clap = "4.2.5"
+
+[[bin]]
+name = "dp100"
+path = "src/main.rs"
